@@ -4,7 +4,9 @@
  * Returns true or false.
  */
 function equalsWithEpsilon(x, y, epsilon) {
-
+  const difference =  x - y;
+  const absDifference = difference < 0 ? -difference : difference;
+  return absDifference <= epsilon;
 }
 
 describe('equalsWithEpsilon', function() {
