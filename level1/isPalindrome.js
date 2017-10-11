@@ -1,7 +1,12 @@
 /**
  * Determines whether the given string is a palindrome, i.e. if you were to reverse the order of the characters inside the string, you would get back the original string.
  */
-function isPalindrome() {}
+function isPalindrome(string) {
+  const stringArray = Array.from(string);
+  return stringArray.slice(0).reverse().every(function(element, index) {
+    return element === stringArray[index];
+  });
+}
 
 describe('isPalindrome', function() {
   const assert = require("chai").assert;
