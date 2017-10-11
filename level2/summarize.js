@@ -5,8 +5,23 @@
  * - sum: the sum of all numbers in the array
  * - avg: the average of all numbers in the array
  */
-function summarize() {
-
+function summarize(array) {
+  const summary = array.reduce(function(previous, current, index) {
+    return {
+      min: previous.min ? Math.min(previous.min, current) : current,
+      max: previous.max ? Math.max(previous.max, current) : current,
+      sum: previous.sum ? previous.sum + current : current
+    }
+  }, {
+    min: null,
+    max: null,
+    sum: null,
+    avg: null
+  })
+  return {
+    ...summary,
+    avg: summary.sum ? (summary.sum / array.length) : null
+  }
 }
 
 describe('summarize', function() {
