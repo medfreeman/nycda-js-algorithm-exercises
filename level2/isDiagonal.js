@@ -1,7 +1,13 @@
 /**
  * Determines whether the given matrix (two-dimensional array of numbers) is diagonal, as in, all numbers outside of the main diagonal are 0. A cell belongs to the main diagonal, if its X coordinate is equal to its Y coordinate.
  */
-function isDiagonal() {}
+function isDiagonal(twoDimArray) {
+  return twoDimArray.every(function(lineArray, lineIndex) {
+    return lineArray.every(function(colArray, colIndex) {
+      return (colIndex === lineIndex) ? true : (colArray === 0)
+    })
+  });
+}
 
 describe('isDiagonal', function() {
   const assert = require('chai').assert;
