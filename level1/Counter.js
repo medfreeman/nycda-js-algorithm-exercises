@@ -2,6 +2,18 @@
  * Represents a counter that remembers its value and can be used to count up.
  */
 class Counter {
+  constructor(initialValue = 0) {
+    this._value = initialValue;
+  }
+
+  current() {
+    return this._value;
+  }
+
+  next() {
+    this._value = this._value + 1
+    return this.current()
+  }
 }
 
 describe('Counter', function() {
