@@ -5,7 +5,9 @@
  *
  * Note: functions like this (functions that take other functions as parameters) are sometimes referred to as higher order functions. This concept originates in functional programming.
  */
-function map() {}
+function map(array, transformFunction) {
+  return array.slice(0).map((value) => transformFunction(value));
+}
 
 describe('map', function() {
   const assert = require('chai').assert;
