@@ -1,8 +1,13 @@
 /**
  * Given a string, returns an object containing attributes for each letter occuring in the string, with the associated value being the number of occurances of that character in the string.
  */
-function countLetters() {
-
+function countLetters(string) {
+  return Array.from(string).reduce(function(previous, current) {
+    return {
+      ...previous,
+      [current]: previous[current] ? previous[current] + 1 : 1
+    }
+  }, {})
 }
 
 describe('countLetters', function() {
