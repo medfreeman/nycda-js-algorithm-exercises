@@ -6,7 +6,7 @@
  * - avg: the average of all numbers in the array
  */
 function summarize(array) {
-  const summary = array.reduce(function(previous, current, index) {
+  const summary = array.reduce(function(previous, current) {
     return {
       min: previous.min ? Math.min(previous.min, current) : current,
       max: previous.max ? Math.max(previous.max, current) : current,
