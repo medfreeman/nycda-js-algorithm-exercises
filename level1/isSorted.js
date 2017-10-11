@@ -2,10 +2,9 @@
  * Given an array of numbers, it checks whether it is sorted (in the ascending order). Returns true or false.
  */
 function isSorted(array) {
-  const sortedArray = array.slice(0).sort(function(a, b) {
+  return array.slice(0).sort(function(a, b) {
     return a > b;
-  });
-  return sortedArray.every(function(element, index) {
+  }).every(function(element, index) {
     return element === array[index]; 
   });
 }
